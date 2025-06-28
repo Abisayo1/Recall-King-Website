@@ -82,7 +82,7 @@ const Navbar = () => {
                   <Link
                     to="/blog"
                     onClick={toggleMenu}
-                    className="hover:bg-white hover:text-blue-600 px-4 py-2 rounded transition"
+                    className="hover:bg-blue hover:text-blue-600 px-4 py-2 rounded transition"
                   >
                     Blog
                   </Link>
