@@ -1,9 +1,10 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Home from './components/Home.jsx';
-import About from './components/About';
-import Services from './components/Services';
-import Contact from './components/Contact';
+import HowitWorks from './components/HowitWorks';
+import Features from './components/Features';
+import FAQ from './components/FAQ';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -11,9 +12,10 @@ function App() {
       <Navbar />
       <div className="pt-20 scroll-smooth">
         <Home />
-        <About />
-        <Services />
-        <Contact />
+        <HowitWorks />
+        <Features />
+        <FAQ />
+        <Footer/>
       </div>
     </div>
   );

@@ -20,10 +20,10 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">
-          <li><a href="#home" className="hover:text-green-600">Home</a></li>
-          <li><a href="#about" className="hover:text-green-600">About</a></li>
-          <li><a href="#services" className="hover:text-green-600">Services</a></li>
-          <li><a href="#contact" className="hover:text-green-600">Contact</a></li>
+          <li><a href="#home" className="hover:text-blue-600">Home</a></li>
+          <li><a href="#howitworks" className="hover:text-blue-600">How it Works</a></li>
+          <li><a href="#features" className="hover:text-blue-600">features</a></li>
+          <li><a href="#faq" className="hover:text-blue-600">faq</a></li>
         </ul>
 
         {/* Fancy Hamburger Icon (Mobile) */}
@@ -53,7 +53,7 @@ const Navbar = () => {
           >
             <div className="p-6">
               <ul className="flex flex-col space-y-5 text-lg font-semibold">
-                {['Home', 'About', 'Services', 'Contact'].map((item) => (
+                {['Home', 'howitworks', 'features', 'faq'].map((item) => (
                   <li key={item}>
                     <a
                       href={`#${item.toLowerCase()}`}
