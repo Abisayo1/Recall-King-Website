@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Sling as Hamburger } from 'hamburger-react'; // Fancy animated hamburger
+import { Sling as Hamburger } from 'hamburger-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../../public/logo.png'; // Adjust the path as needed
+import { Link } from 'react-router-dom'; // ✅ Import React Router Link
+import logo from '../../public/logo.png'; // ✅ Adjust the path if needed
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,18 +21,22 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">
-          <li><a href="#home" className="hover:text-blue-600">Home</a></li>
-          <li><a href="#howitworks" className="hover:text-blue-600">How it Works</a></li>
-          <li><a href="#features" className="hover:text-blue-600">features</a></li>
-          <li><a href="#faq" className="hover:text-blue-600">faq</a></li>
+          <li><a href="/#home" className="hover:text-blue-600">Home</a></li>
+          <li><a href="/#howitworks" className="hover:text-blue-600">How it Works</a></li>
+          <li><a href="/#features" className="hover:text-blue-600">Features</a></li>
+          <li><a href="/#faq" className="hover:text-blue-600">FAQ</a></li>
+          {/* Blog link using React Router */}
+          <li>
+            <Link to="/blog" className="hover:text-blue-600">Blog</Link>
+          </li>
         </ul>
 
-        {/* Fancy Hamburger Icon (Mobile) */}
+        {/* Mobile Hamburger */}
         <div className="md:hidden">
           <Hamburger
             toggled={isOpen}
             toggle={setIsOpen}
-            color="#4B5563" // Tailwind's gray-700
+            color="#4B5563"
             size={26}
             rounded
             direction="right"
@@ -53,17 +58,29 @@ const Navbar = () => {
           >
             <div className="p-6">
               <ul className="flex flex-col space-y-5 text-lg font-semibold">
+                {/* Section Links */}
                 {['Home', 'howitworks', 'features', 'faq'].map((item) => (
                   <li key={item}>
                     <a
                       href={`#${item.toLowerCase()}`}
-                      className="hover:bg-blue hover:text-blue-600 px-4 py-2 rounded transition"
+                      className="hover:bg-blue-700 px-4 py-2 rounded transition"
                       onClick={toggleMenu}
                     >
-                      {item}
+                      {item.charAt(0).toUpperCase() + item.slice(1)}
                     </a>
                   </li>
                 ))}
+
+                {/* Blog Link for Mobile */}
+                <li>
+                  <Link
+                    to="/blog"
+                    className="hover:bg-white hover:text-blue-600 px-4 py-2 rounded transition"
+                    onClick={toggleMenu}
+                  >
+                    Blog
+                  </Link>
+                </li>
               </ul>
             </div>
           </motion.div>
