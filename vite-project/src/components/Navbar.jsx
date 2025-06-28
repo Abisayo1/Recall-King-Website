@@ -1,31 +1,39 @@
 import React, { useState } from 'react';
 import { Sling as Hamburger } from 'hamburger-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom'; // ✅ Import React Router Link
-import logo from '../../public/logo.png'; // ✅ Adjust the path if needed
+import { Link, useLocation } from 'react-router-dom';
+import logo from '../../public/logo.png'; // adjust as needed
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  const scrollLinks = [
+    { name: 'Home', target: 'home' },
+    { name: 'How it Works', target: 'howitworks' },
+    { name: 'Features', target: 'features' },
+    { name: 'FAQ', target: 'faq' },
+  ];
 
   return (
     <nav className="bg-white shadow-md fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <a href="#home">
-            <img src={logo} alt="Logo" className="h-16 w-auto cursor-pointer" />
-          </a>
+          <Link to="/" className="cursor-pointer">
+            <img src={logo} alt="Logo" className="h-16 w-auto" />
+          </Link>
         </div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">
-          <li><a href="/#home" className="hover:text-blue-600">Home</a></li>
-          <li><a href="/#howitworks" className="hover:text-blue-600">How it Works</a></li>
-          <li><a href="/#features" className="hover:text-blue-600">Features</a></li>
-          <li><a href="/#faq" className="hover:text-blue-600">FAQ</a></li>
-          {/* Blog link using React Router */}
+          {scrollLinks.map(({ name, target }) => (
+            <li key={target}>
+              <Link to="/" state={{ scrollTo: target }} className="hover:text-blue-600">
+                {name}
+              </Link>
+            </li>
+          ))}
           <li>
             <Link to="/blog" className="hover:text-blue-600">Blog</Link>
           </li>
@@ -45,7 +53,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Animated Mobile Menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -58,25 +66,23 @@ const Navbar = () => {
           >
             <div className="p-6">
               <ul className="flex flex-col space-y-5 text-lg font-semibold">
-                {/* Section Links */}
-                {['Home', 'howitworks', 'features', 'faq'].map((item) => (
-                  <li key={item}>
-                    <a
-                      href={`#${item.toLowerCase()}`}
-                      className="hover:bg-blue-700 px-4 py-2 rounded transition"
+                {scrollLinks.map(({ name, target }) => (
+                  <li key={target}>
+                    <Link
+                      to="/"
+                      state={{ scrollTo: target }}
                       onClick={toggleMenu}
+                      className="hover:bg-blue-700 px-4 py-2 rounded transition"
                     >
-                      {item.charAt(0).toUpperCase() + item.slice(1)}
-                    </a>
+                      {name}
+                    </Link>
                   </li>
                 ))}
-
-                {/* Blog Link for Mobile */}
                 <li>
                   <Link
                     to="/blog"
-                    className="hover:bg-white hover:text-blue-600 px-4 py-2 rounded transition"
                     onClick={toggleMenu}
+                    className="hover:bg-white hover:text-blue-600 px-4 py-2 rounded transition"
                   >
                     Blog
                   </Link>

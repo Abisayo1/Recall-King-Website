@@ -1,7 +1,31 @@
-import React from "react";
-import { FaCar, FaHome, FaShoppingCart, FaPhone, FaFacebook, FaYoutube, FaLinkedin, FaInstagram } from "react-icons/fa";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import {
+  FaCar,
+  FaPhone,
+  FaFacebook,
+  FaYoutube,
+  FaLinkedin,
+  FaInstagram,
+  FaShoppingCart,
+} from "react-icons/fa";
 
 export default function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const sectionId = location.state?.scrollTo;
+    if (sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+          window.history.replaceState({}, document.title); // Clear scrollTo state
+        }, 100);
+      }
+    }
+  }, [location]);
+
   return (
     <section id="home" className="flex flex-col md:flex-row items-center justify-between p-6 md:p-16 bg-gray-50">
       {/* Left Side Text */}
@@ -34,20 +58,19 @@ export default function Home() {
 
       {/* Right Side Image + Bubbles */}
       <div className="relative w-full max-w-xl">
-        {/* Family Image */}
         <img
-          src="/family.png" // Place your image in the public folder as "family.png"
+          src="/family.png"
           alt="Happy Family"
           className="rounded-xl w-full object-cover"
         />
 
         {/* Floating Car Loan Bubble */}
         <div className="absolute top-28 hidden sm:inline left-4 bg-white shadow-lg flex items-center gap-2 px-4 py-2 rounded-full">
-          <FaCar className=" hidden sm:inline text-blue-600" />
+          <FaCar className="hidden sm:inline text-blue-600" />
           <span className="text-sm hidden sm:inline font-medium">Car Recalls</span>
         </div>
 
-        {/* Floating Home Loan Bubble */}
+        {/* Floating Product Recall Bubble */}
         <div className="absolute top-80 right-4 hidden sm:inline bg-white shadow-lg flex items-center gap-2 px-4 py-2 rounded-full">
           <FaShoppingCart className="hidden sm:inline text-blue-600" />
           <span className="text-sm hidden sm:inline font-medium">Product Recalls</span>
