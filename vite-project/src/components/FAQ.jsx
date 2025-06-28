@@ -21,7 +21,7 @@ const FAQ = () => {
       <div className=" my-10  ">
         
       <div className='sm:text-3xl text-xl  font-MontserratBold mx-auto max-w-[1000px] text-[#2563eb] ' > Frequently Asked Questions</div>
-      <Accordion title='Where does Recall King get its data?' text='From publicly available APIs such as OpenFDA' />
+      <Accordion title='Where does Recall King get its data?' text='From publicly available and trusted APIs such as OpenFDA' />
       <Accordion title='Is my information secure?' text='Yes it is. Recall King do not sell your data to any third party' />
       <Accordion title='Does it work outside the U.S.?' text='Recall King works in any part of the world' />
       </div>
