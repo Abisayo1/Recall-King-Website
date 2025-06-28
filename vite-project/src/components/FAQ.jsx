@@ -13,7 +13,7 @@ const FAQ = () => {
         <div className="overlay rounded-xl absolute h-full w-full top-0 bg-[#2563eb] "></div>
         <div className="overlay-text  absolute inset-0 flex text-white flex-col justify-center items-center ">
           <div className='text-2xl sm:text-5xl font-MontserratBold py-5 ' >FAQs</div>
-          <div className=' sm:text-2xl max-w-[600px] text-center ' >Find out the answers to our most Frequently asked questions.</div>
+          
         </div>
       </div>
 

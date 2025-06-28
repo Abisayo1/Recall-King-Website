@@ -42,15 +42,15 @@ export default function Home() {
         />
 
         {/* Floating Car Loan Bubble */}
-        <div className="absolute top-28 left-4 bg-white shadow-lg flex items-center gap-2 px-4 py-2 rounded-full">
-          <FaCar className="text-blue-600" />
-          <span className="text-sm font-medium">Car Recalls</span>
+        <div className="absolute top-28 hidden sm:inline left-4 bg-white shadow-lg flex items-center gap-2 px-4 py-2 rounded-full">
+          <FaCar className=" hidden sm:inline text-blue-600" />
+          <span className="text-sm hidden sm:inline font-medium">Car Recalls</span>
         </div>
 
         {/* Floating Home Loan Bubble */}
-        <div className="absolute top-80 right-4 bg-white shadow-lg flex items-center gap-2 px-4 py-2 rounded-full">
-          <FaShoppingCart className="text-blue-600" />
-          <span className="text-sm font-medium">Product Recalls</span>
+        <div className="absolute top-80 right-4 hidden sm:inline bg-white shadow-lg flex items-center gap-2 px-4 py-2 rounded-full">
+          <FaShoppingCart className="hidden sm:inline text-blue-600" />
+          <span className="text-sm hidden sm:inline font-medium">Product Recalls</span>
         </div>
 
         {/* Pagination Dots */}
