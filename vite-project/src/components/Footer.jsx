@@ -1,5 +1,6 @@
 import React from "react";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -8,7 +9,6 @@ export default function Footer() {
         {/* Logo Section */}
         <div>
           <img src="/logo.png" alt="Company Logo" className="w-32 top-0" />
-      
         </div>
 
         {/* About */}
@@ -23,10 +23,26 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-blue-600">Home</a></li>
-            <li><a href="#howitworks" className="hover:text-blue-600">How it Works</a></li>
-            <li><a href="#features" className="hover:text-blue-600">Features</a></li>
-            <li><a href="#faq" className="hover:text-blue-600">FAQ</a></li>
+            <li>
+              <Link to="/" state={{ scrollTo: "home" }} className="hover:text-blue-600">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/" state={{ scrollTo: "howitworks" }} className="hover:text-blue-600">
+                How it Works
+              </Link>
+            </li>
+            <li>
+              <Link to="/" state={{ scrollTo: "features" }} className="hover:text-blue-600">
+                Features
+              </Link>
+            </li>
+            <li>
+              <Link to="/" state={{ scrollTo: "faq" }} className="hover:text-blue-600">
+                FAQ
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -34,16 +50,22 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
           <div className="flex space-x-4">
-            <a href="#" className="hover:text-blue-600">
+            <a href="#" className="hover:text-blue-600" aria-label="Facebook">
               <Facebook className="w-5 h-5" />
             </a>
-            <a href="#" className="hover:text-blue-600">
+            <a href="#" className="hover:text-blue-600" aria-label="Twitter">
               <Twitter className="w-5 h-5" />
             </a>
-            <a href="https://www.linkedin.com/company/107562109/admin/dashboard/" className="hover:text-blue-600">
+            <a
+              href="https://www.linkedin.com/company/107562109/admin/dashboard/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-600"
+              aria-label="LinkedIn"
+            >
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="#" className="hover:text-blue-600">
+            <a href="#" className="hover:text-blue-600" aria-label="Instagram">
               <Instagram className="w-5 h-5" />
             </a>
           </div>
