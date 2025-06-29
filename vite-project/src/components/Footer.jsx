@@ -40,7 +40,7 @@ export default function Footer() {
             <a href="#" className="hover:text-blue-600">
               <Twitter className="w-5 h-5" />
             </a>
-            <a href="#" className="hover:text-blue-600">
+            <a href="https://www.linkedin.com/company/107562109/admin/dashboard/" className="hover:text-blue-600">
               <Linkedin className="w-5 h-5" />
             </a>
             <a href="#" className="hover:text-blue-600">

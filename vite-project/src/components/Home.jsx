@@ -51,7 +51,13 @@ export default function Home() {
           <span>+1 404 857 3245</span>
           <FaFacebook className="text-blue-600" />
           <FaYoutube className="text-red-500" />
-          <FaLinkedin className="text-blue-700" />
+          <a
+            href="https://www.linkedin.com/company/107562109/admin/dashboard/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className="text-blue-700" />
+          </a>
           <FaInstagram className="text-pink-500" />
         </div>
       </div>
