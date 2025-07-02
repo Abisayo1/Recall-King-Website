@@ -8,6 +8,7 @@ import {
   FaLinkedin,
   FaInstagram,
   FaShoppingCart,
+  FaTwitter,
 } from "react-icons/fa";
 
 export default function Home() {
@@ -20,7 +21,7 @@ export default function Home() {
       if (element) {
         setTimeout(() => {
           element.scrollIntoView({ behavior: "smooth" });
-          window.history.replaceState({}, document.title); // Clear scrollTo state
+          window.history.replaceState({}, document.title);
         }, 100);
       }
     }
@@ -49,8 +50,17 @@ export default function Home() {
         <div className="flex items-center gap-4 text-gray-600">
           <FaPhone className="text-green-500" />
           <span>+1 404 857 3245</span>
-          <FaFacebook className="text-blue-600" />
-          <FaYoutube className="text-red-500" />
+
+          <a
+            href="https://www.facebook.com/profile.php?id=61575234003983"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebook className="text-blue-600" />
+          </a>
+
+          {/* <FaYoutube className="text-red-500" /> */}
+
           <a
             href="https://www.linkedin.com/company/107562109/admin/dashboard/"
             target="_blank"
@@ -58,7 +68,22 @@ export default function Home() {
           >
             <FaLinkedin className="text-blue-700" />
           </a>
-          <FaInstagram className="text-pink-500" />
+
+          <a
+            href="https://www.instagram.com/therecallking?igsh=eGd1Z24wZXUybmp6"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram className="text-pink-500" />
+          </a>
+
+          <a
+            href="https://x.com/therecallking?s=21"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaTwitter className="text-blue-500" />
+          </a>
         </div>
       </div>
 
