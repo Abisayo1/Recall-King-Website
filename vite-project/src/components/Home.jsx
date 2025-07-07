@@ -9,6 +9,7 @@ import {
   FaInstagram,
   FaShoppingCart,
   FaTwitter,
+  FaEnvelope, // 📧 Email icon
 } from "react-icons/fa";
 
 export default function Home() {
@@ -51,6 +52,15 @@ export default function Home() {
           <FaPhone className="text-green-500" />
           <span>+1 404 857 3245</span>
 
+          {/* 📧 Email Icon */}
+          <a
+            href="mailto:info@therecallking.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaEnvelope className="text-red-500" />
+          </a>
+
           <a
             href="https://www.facebook.com/profile.php?id=61575234003983"
             target="_blank"
@@ -58,8 +68,6 @@ export default function Home() {
           >
             <FaFacebook className="text-blue-600" />
           </a>
-
-          {/* <FaYoutube className="text-red-500" /> */}
 
           <a
             href="https://www.linkedin.com/company/107562109/admin/dashboard/"
