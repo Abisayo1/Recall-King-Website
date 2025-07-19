@@ -78,7 +78,6 @@ export default function TermsAndConditions() {
       <Section title="13. Contact Us">
         If you have any questions about these Terms, please contact us at:
         <br />📧 Email: <a href="mailto:therecallking@gmail.com" className="text-green-700 underline">therecallking@gmail.com</a>
-        <br />📍 Address: 16931 93rd Road North, Loxahatchee, Florida 33470, USA
       </Section>
 
       <p className="text-sm text-gray-600 mt-10">
