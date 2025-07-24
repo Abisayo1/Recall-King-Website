@@ -7,6 +7,7 @@ import Features from './components/Features';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import BlogPage from './Blog.jsx';  // 👈 Import your new Blog Page here
+import PrivacyPolicy from './PrivacyPolicy.jsx';
 import TermsAndConditions from './TermsAndConditions.jsx';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           {/* Blog Page */}
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/terms" element={<TermsAndConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
         </Routes>
       </div>
@@ -40,3 +42,4 @@ function App() {
 }
 
 export default App;
+
