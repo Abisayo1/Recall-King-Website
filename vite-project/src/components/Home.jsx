@@ -39,12 +39,20 @@ export default function Home() {
           Get real-time recall alerts based on your purchases or subscriptions.
         </p>
         <div className="flex gap-4 mb-8">
-          <button className="bg-blue-600 text-white px-5 py-3 rounded-md shadow hover:bg-blue-700 transition">
-            Download for iPhone
-          </button>
+          <a
+            href="https://apps.apple.com/app/recall-king/id6746662865"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="bg-blue-600 text-white px-5 py-3 rounded-md shadow hover:bg-blue-700 transition">
+              Download for iPhone
+            </button>
+          </a>
+
           <button className="border border-blue-600 text-blue-600 px-5 py-3 rounded-md hover:bg-blue-50 transition">
             Download for Android
           </button>
+
         </div>
 
         {/* Contact Info and Social Icons */}
