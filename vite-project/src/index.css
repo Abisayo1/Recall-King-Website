@@ -6,3 +6,16 @@
 html {
   scroll-behavior: smooth;
 }
+
+.ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+}
+
+ol {
+  list-style: decimal;
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+}
+

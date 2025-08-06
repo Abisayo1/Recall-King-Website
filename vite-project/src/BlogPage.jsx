@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Footer from "../src/components/Footer";
-import blogs from "../src/blogs"; // ✅ Import the combined blog list
+import blogs from "../src/blogs"; // Import your blog list
 
 export default function BlogPage() {
   const [selectedBlog, setSelectedBlog] = useState(blogs[0]);
@@ -52,10 +52,11 @@ export default function BlogPage() {
               {selectedBlog.title}
             </h1>
 
-            {/* Blog Text Content */}
-            <p className="text-gray-700 whitespace-pre-line mb-6">
-              {selectedBlog.content}
-            </p>
+            {/* Blog Text Content (HTML rendered) */}
+            <div
+              className="text-gray-700 blog-content mb-6"
+              dangerouslySetInnerHTML={{ __html: selectedBlog.content }}
+            ></div>
 
             {/* Inline Images */}
             {selectedBlog.inlineImages &&
