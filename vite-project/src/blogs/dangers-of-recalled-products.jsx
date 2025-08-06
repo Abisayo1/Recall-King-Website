@@ -2,6 +2,7 @@ const blog = {
   id: 2,
   title: "How Dangerous Are Product Recalls, And Why Most People Miss Them",
   headerImage: "/dangers.png",
+  slug: "how-dangerous-are-product-recalls",
   content: `
 <p>When was the last time you checked if something in your home had been recalled?
 

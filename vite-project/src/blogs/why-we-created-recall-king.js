@@ -1,6 +1,7 @@
 const blog = {
   id: 1,
   title: "Why we Created Recall King – The Story Behind the App",
+  slug: "why-we-created-recall-king",
   headerImage: "/notalert.png",
   content: `
 <p>It all started with a headline we couldn’t ignore.</p>

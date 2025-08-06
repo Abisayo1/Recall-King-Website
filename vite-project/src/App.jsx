@@ -6,7 +6,8 @@ import HowitWorks from './components/HowitWorks';
 import Features from './components/Features';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
-import BlogPage from './BlogPage.jsx';  // 👈 Import your new Blog Page here
+import BlogPage from './BlogPage.jsx';
+import BlogDetails from './BlogDetails.jsx'; // ✅ NEW
 import PrivacyPolicy from './PrivacyPolicy.jsx';
 import TermsAndConditions from './TermsAndConditions.jsx';
 
@@ -16,7 +17,6 @@ function App() {
       <Navbar />
       <div className="pt-20 scroll-smooth">
         <Routes>
-          {/* Home/Landing Page */}
           <Route
             path="/"
             element={
@@ -29,12 +29,10 @@ function App() {
               </>
             }
           />
-
-          {/* Blog Page */}
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogDetails />} /> {/* ✅ NEW */}
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-
         </Routes>
       </div>
     </Router>
@@ -42,4 +40,3 @@ function App() {
 }
 
 export default App;
-
