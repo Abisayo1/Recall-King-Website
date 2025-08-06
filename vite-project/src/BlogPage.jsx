@@ -1,15 +1,49 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Footer from "../src/components/Footer";
-import blogs from "../src/blogs"; // Import your blog list
+import blogs from "../src/blogs"; // Your blog list
 
 export default function BlogPage() {
   const [selectedBlog, setSelectedBlog] = useState(blogs[0]);
+  const [showMobileMenu, setShowMobileMenu] = useState(false); // For mobile toggle
 
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800 flex flex-col">
+      {/* Mobile Toggle for Blog List */}
+      <div className="md:hidden p-4">
+        <button
+          onClick={() => setShowMobileMenu(!showMobileMenu)}
+          className="w-full bg-blue-600 text-white px-4 py-2 rounded-md"
+        >
+          {showMobileMenu ? "Hide Blog Posts" : "Show Blog Posts"}
+        </button>
+
+        {showMobileMenu && (
+          <div className="bg-white shadow-md p-4 mt-2 rounded">
+            <h2 className="text-lg font-semibold mb-3">Blog Posts</h2>
+            {blogs.map((blog) => (
+              <button
+                key={blog.id}
+                onClick={() => {
+                  setSelectedBlog(blog);
+                  setShowMobileMenu(false); // close on select
+                }}
+                className={`block w-full text-left mb-2 px-3 py-2 rounded ${
+                  selectedBlog.id === blog.id
+                    ? "bg-blue-600 text-white"
+                    : "hover:bg-blue-50"
+                }`}
+              >
+                {blog.title}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Layout: Sidebar + Content */}
       <div className="flex flex-1">
-        {/* Sidebar */}
+        {/* Desktop Sidebar */}
         <div className="w-64 bg-white shadow-md p-4 hidden md:block">
           <h2 className="text-xl font-bold mb-4">Blog Posts</h2>
           {blogs.map((blog) => (
@@ -27,7 +61,7 @@ export default function BlogPage() {
           ))}
         </div>
 
-        {/* Main Content */}
+        {/* Blog Content */}
         <div className="flex-1 p-4 md:p-6">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -35,7 +69,7 @@ export default function BlogPage() {
             transition={{ duration: 0.5 }}
             className="max-w-3xl mx-auto bg-white rounded-xl shadow-md p-6"
           >
-            {/* Blog Header Image */}
+            {/* Header Image */}
             {selectedBlog.headerImage && (
               <motion.img
                 src={selectedBlog.headerImage}
@@ -52,9 +86,9 @@ export default function BlogPage() {
               {selectedBlog.title}
             </h1>
 
-            {/* Blog Text Content (HTML rendered) */}
+            {/* Content */}
             <div
-              className="text-gray-700 blog-content mb-6"
+              className="text-gray-700 blog-content mb-6 prose"
               dangerouslySetInnerHTML={{ __html: selectedBlog.content }}
             ></div>
 
@@ -76,6 +110,7 @@ export default function BlogPage() {
         </div>
       </div>
 
+      {/* Footer */}
       <Footer />
     </div>
   );
