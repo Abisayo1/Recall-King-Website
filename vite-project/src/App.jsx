@@ -6,7 +6,7 @@ import HowitWorks from './components/HowitWorks';
 import Features from './components/Features';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
-import BlogPage from './Blog.jsx';  // 👈 Import your new Blog Page here
+import BlogPage from './BlogPage.jsx';  // 👈 Import your new Blog Page here
 import PrivacyPolicy from './PrivacyPolicy.jsx';
 import TermsAndConditions from './TermsAndConditions.jsx';
 
