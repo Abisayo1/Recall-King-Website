@@ -10,6 +10,7 @@ import BlogPage from './BlogPage.jsx';
 import BlogDetails from './BlogDetails.jsx'; // ✅ NEW
 import PrivacyPolicy from './PrivacyPolicy.jsx';
 import TermsAndConditions from './TermsAndConditions.jsx';
+import RedirectPage from './RedirectPage.jsx';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/blog/:slug" element={<BlogDetails />} /> {/* ✅ NEW */}
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/download" element={<RedirectPage />} />
         </Routes>
       </div>
     </Router>
