@@ -49,9 +49,16 @@ export default function Home() {
             </button>
           </a>
 
+          <a
+            href="https://play.google.com/store/apps/details?id=com.recallking.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
           <button className="border border-blue-600 text-blue-600 px-5 py-3 rounded-md hover:bg-blue-50 transition">
             Download for Android
           </button>
+          </a>
 
         </div>
 
