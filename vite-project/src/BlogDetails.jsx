@@ -38,7 +38,7 @@ export default function BlogDetails() {
           <img
             src={blog.headerImage}
             alt="Blog Header"
-            className="w-full h-64 object-cover rounded-lg mb-6"
+            className="w-full h-full object-cover rounded-lg mb-6"
           />
         )}
 

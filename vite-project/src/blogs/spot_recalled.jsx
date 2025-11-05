@@ -1,5 +1,5 @@
 const blog = {
-  id: 3,
+  id: 2,
   title: "How To Spot A Recalled Product At Home",
   headerImage: "/checking.png",
   slug: "spotting-recalled-product",
