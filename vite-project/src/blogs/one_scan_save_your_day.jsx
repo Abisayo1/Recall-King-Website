@@ -12,7 +12,7 @@ child's new toy was quietly removed from shelves, and you had no clue.
 
 <strong>Meet Recall King</strong>
 
-<p><br>Enter Recall King, your personal safety sidekick. This isn't just another app; it's a
+<p><br>Enter Recall King, your personal safety sidekick. This is not just another app; it's a
 revolutionary tool designed to keep you informed and protected. With one simple barcode
 scan, Recall King cross-references the product against a comprehensive, live database of
 official recalls. If your product is safe, you’re in the clear. If it’s not, you’ll receive an instant
