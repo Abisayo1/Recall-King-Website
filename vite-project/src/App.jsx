@@ -10,7 +10,8 @@ import BlogPage from "./BlogPage.jsx";
 import BlogDetails from "./BlogDetails.jsx";
 import PrivacyPolicy from "./PrivacyPolicy.jsx";
 import TermsAndConditions from "./TermsAndConditions.jsx";
-import RedirectPage from "./pages/OpenRedirect.jsx";
+import OpenRedirect from "./pages/OpenRedirect.jsx";
+import RedirectPage from './RedirectPage.jsx';
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/download" element={<RedirectPage />} />
-          <Route path="/open/*" element={<RedirectPage />} />
+          <Route path="/open/*" element={<OpenRedirect />} />
         </Routes>
       </div>
     </>
