@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Sling as Hamburger } from 'hamburger-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../../public/logo.png'; // adjust as needed
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +21,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center">
           <Link to="/" className="cursor-pointer">
-            <img src={logo} alt="Logo" className="h-16 w-auto" />
+            <img src="/logo.png" alt="Logo" className="h-16 w-auto" />
           </Link>
         </div>
 
