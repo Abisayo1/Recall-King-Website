@@ -1,7 +1,7 @@
 const blog = {
   id: 6,
-  title: "One Scan, One Click — A Safer Life Starts Here",
-  slug: "SIMPLIFYING SAFETY IN A BUSY WORLD",
+  title: "One Scan, One Click, A Safer Life Starts Here",
+  slug: "Simplifying safety in a busy world",
   headerImage: "../One scan.png",
   content: `
 <p>Let’s be real, life moves fast. You’re juggling a million things: groceries, online orders, your
