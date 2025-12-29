@@ -13,7 +13,6 @@ Even your favorite frozen pasta? Recalled for contamination.
 But don’t worry, this isn’t fear-mongering. It’s empowerment.
 Because now, there’s Recall King.
 
-
 </p><br/>
 
 <strong>The App That’s Not Just an App</strong>
@@ -51,6 +50,7 @@ contributes to a safe and balanced life. <br /><br />
 It’s your personal gatekeeper, making sure only the safest products make their way into your
 home. So, take a deep breath, and let Recall King handle the safety checks, leaving you free to
 focus on the things that truly matter. <br /><br />
+
 
 <strong>Conclusion</strong> <br /><br />
 Recall King isn't just an app; it's a lifestyle choice. By integrating it into your daily routine,
