@@ -12,6 +12,8 @@ import PrivacyPolicy from "./PrivacyPolicy.jsx";
 import TermsAndConditions from "./TermsAndConditions.jsx";
 import OpenRedirect from "./pages/OpenRedirect.jsx";
 import RedirectPage from './RedirectPage.jsx';
+import Login from "./pages/Login";
+import InfluencerSignup from "./pages/InfluencerSignup";
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/download" element={<RedirectPage />} />
           <Route path="/open/*" element={<OpenRedirect />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/influencer" element={<InfluencerSignup />} />
         </Routes>
       </div>
     </>

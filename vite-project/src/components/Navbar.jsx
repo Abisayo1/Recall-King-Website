@@ -37,6 +37,21 @@ const Navbar = () => {
           <li>
             <Link to="/blog" className="hover:text-blue-600">Blog</Link>
           </li>
+
+          <li>
+            <Link to="/login" className="hover:text-blue-600">
+              Login
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/influencer"
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+            >
+              Become an Influencer
+            </Link>
+          </li>
         </ul>
 
         {/* Mobile Hamburger */}
@@ -85,6 +100,25 @@ const Navbar = () => {
                     className="hover:bg-blue hover:text-blue-600 px-4 py-2 rounded transition"
                   >
                     Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/login"
+                    onClick={toggleMenu}
+                    className="hover:bg-blue-700 px-4 py-2 rounded transition"
+                  >
+                    Login
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/influencer"
+                    onClick={toggleMenu}
+                    className="hover:bg-blue-700 px-4 py-2 rounded transition"
+                  >
+                    Be an Influencer
                   </Link>
                 </li>
               </ul>
