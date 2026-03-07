@@ -14,6 +14,7 @@ import OpenRedirect from "./pages/OpenRedirect.jsx";
 import RedirectPage from './RedirectPage.jsx';
 import Login from "./pages/Login";
 import InfluencerSignup from "./pages/InfluencerSignup";
+import VerifyInfluencerOtp from "./pages/VerifyInfluencerOtp";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="/open/*" element={<OpenRedirect />} />
           <Route path="/login" element={<Login />} />
           <Route path="/influencer" element={<InfluencerSignup />} />
+          <Route path="/verify-otp" element={<VerifyInfluencerOtp />} />
         </Routes>
       </div>
     </>
