@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { verifyOtp } from "../services/authService";
 
 export default function VerifyInfluencerOtp() {
   const location = useLocation();
@@ -13,43 +14,19 @@ export default function VerifyInfluencerOtp() {
     e.preventDefault();
 
     try {
-      const response = await fetch(
-        "https://cute-toma-recallking-758d8dd8.koyeb.app/api/v1/user/verifyOtp",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            version: "1.0.0"
-          },
-          body: JSON.stringify({
-            email,
-            otp
-          })
-        }
-      );
+      const data = await verifyOtp(email, otp);
 
-      const data = await response.json();
+      localStorage.setItem("accessToken", data.accessToken);
+      localStorage.setItem("user", JSON.stringify(data.user));
 
-      if (response.ok) {
+      setMessage(data.message);
 
-        // Save token
-        localStorage.setItem("accessToken", data.accessToken);
-        localStorage.setItem("user", JSON.stringify(data.user));
-
-        setMessage(data.message);
-
-        // Redirect after success
-        setTimeout(() => {
-          navigate("/");
-        }, 2000);
-
-      } else {
-        setMessage("OTP verification failed");
-      }
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
 
     } catch (error) {
-      console.error(error);
-      setMessage("Something went wrong");
+      setMessage(error.message);
     }
   };
 

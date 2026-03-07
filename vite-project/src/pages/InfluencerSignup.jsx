@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { registerInfluencer } from "../services/authService";
 
 export default function InfluencerSignup() {
 
@@ -17,39 +18,15 @@ export default function InfluencerSignup() {
   setMessage("");
 
   try {
-
-    const response = await fetch(
-      "https://cute-toma-recallking-758d8dd8.koyeb.app/api/v1/user/register-influencer",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          version: "1.0.0",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          password,
-        }),
-      }
-    );
-
-    const data = await response.json();
-
-    console.log("API RESPONSE:", data);
-
-    if (!response.ok) {
-      setMessage(data.message || "Registration failed");
-      return;
-    }
+    const data = await registerInfluencer(name, email, password);
 
     setMessage(data.message);
 
     navigate("/verify-otp", { state: { email } });
 
   } catch (error) {
-    console.error("FETCH ERROR:", error);
-    setMessage("Network error. Please try again.");
+    console.error(error);
+    setMessage(error.message || "Registration failed");
   }
 
   setLoading(false);
