@@ -40,3 +40,15 @@ export const markInfluencerMonthPaid = async (influencerId, monthYear, payoutRef
         payoutRef,
     });
 };
+
+export const upgradeToInfluencer = async () => {
+    return await apiRequest("/api/v1/user/upgrade-to-influencer", "POST");
+};
+
+export const getResetToken = async (email) => {
+    return await apiRequest("/api/v1/user/getResetToken", "POST", { email }, true);
+};
+
+export const resetPassword = async (email, token, password) => {
+    return await apiRequest("/api/v1/user/resetPassword", "POST", { email, token, password }, true);
+};

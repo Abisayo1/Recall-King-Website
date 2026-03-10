@@ -17,6 +17,7 @@ import InfluencerSignup from "./pages/InfluencerSignup";
 import VerifyInfluencerOtp from "./pages/VerifyInfluencerOtp";
 import InfluencerDashboard from "./pages/InfluencerDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
+import UpgradeToInfluencer from "./pages/UpgradeToInfluencer";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
           <Route path="/verify-otp" element={<VerifyInfluencerOtp />} />
           <Route path="/influencer-dashboard" element={<InfluencerDashboard />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
+          <Route path="/upgrade-to-influencer" element={<UpgradeToInfluencer />} />
         </Routes>
       </div>
     </>
