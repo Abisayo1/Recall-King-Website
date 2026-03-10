@@ -26,7 +26,7 @@ export default function Login() {
       setMessage(data.message);
 
       setTimeout(() => {
-        navigate("/");
+        navigate("/influencer-dashboard");
       }, 1500);
 
     } catch (error) {

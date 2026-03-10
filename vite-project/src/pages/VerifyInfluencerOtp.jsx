@@ -22,7 +22,7 @@ export default function VerifyInfluencerOtp() {
       setMessage(data.message);
 
       setTimeout(() => {
-        navigate("/");
+        navigate("/influencer-dashboard");
       }, 2000);
 
     } catch (error) {

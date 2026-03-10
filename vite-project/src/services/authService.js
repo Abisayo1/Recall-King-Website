@@ -24,3 +24,7 @@ export const loginUser = async (email, password) => {
         password,
     });
 };
+
+export const getInfluencerDashboard = async () => {
+    return await apiRequest("/api/v1/user/influencer/dashboard", "GET");
+};

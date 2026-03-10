@@ -15,6 +15,7 @@ import RedirectPage from './RedirectPage.jsx';
 import Login from "./pages/Login";
 import InfluencerSignup from "./pages/InfluencerSignup";
 import VerifyInfluencerOtp from "./pages/VerifyInfluencerOtp";
+import InfluencerDashboard from "./pages/InfluencerDashboard";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/influencer" element={<InfluencerSignup />} />
           <Route path="/verify-otp" element={<VerifyInfluencerOtp />} />
+          <Route path="/influencer-dashboard" element={<InfluencerDashboard />} />
         </Routes>
       </div>
     </>
