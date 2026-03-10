@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser, getResetToken, resetPassword } from "../services/authService";
-import { ArrowLeft, CheckCircle } from "lucide-react";
+import { ArrowLeft, CheckCircle, Eye, EyeOff } from "lucide-react";
 
 export default function Login() {
 
@@ -20,6 +20,10 @@ export default function Login() {
   const [fpLoading, setFpLoading] = useState(false);
   const [fpMessage, setFpMessage] = useState({ text: "", type: "error" });
   const [fpDone, setFpDone] = useState(false);
+
+  // --- Password Visibility State ---
+  const [showPassword, setShowPassword] = useState(false);
+  const [showFpPassword, setShowFpPassword] = useState(false);
 
   const navigate = useNavigate();
 
@@ -201,15 +205,25 @@ export default function Login() {
             {/* STEP 3: New Password */}
             {fpStep === 3 && !fpDone && (
               <form onSubmit={handleResetPassword} className="flex flex-col gap-4">
+              <div className="relative">
                 <input
-                  type="password"
+                  type={showFpPassword ? "text" : "password"}
                   placeholder="Enter your new password"
                   value={fpNewPassword}
                   onChange={(e) => setFpNewPassword(e.target.value)}
-                  className="border border-gray-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300"
+                  className="border border-gray-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 w-full pr-11"
                   required
                   minLength={8}
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowFpPassword((v) => !v)}
+                  className="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-gray-600 transition-colors"
+                  tabIndex={-1}
+                >
+                  {showFpPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              </div>
                 <button
                   type="submit"
                   disabled={fpLoading}
@@ -248,14 +262,24 @@ export default function Login() {
                 required
               />
 
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="border border-gray-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300"
-                required
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="border border-gray-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 w-full pr-11"
+                  required
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword((v) => !v)}
+                  className="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-gray-600 transition-colors"
+                  tabIndex={-1}
+                >
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              </div>
 
               {/* Forgot Password Link */}
               <div className="flex justify-end -mt-1">
