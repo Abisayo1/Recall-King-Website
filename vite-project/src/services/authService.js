@@ -28,3 +28,15 @@ export const loginUser = async (email, password) => {
 export const getInfluencerDashboard = async () => {
     return await apiRequest("/api/v1/user/influencer/dashboard", "GET");
 };
+
+export const getAdminCommissions = async () => {
+    return await apiRequest("/api/v1/user/admin/influencers/commissions", "GET");
+};
+
+export const markInfluencerMonthPaid = async (influencerId, monthYear, payoutRef) => {
+    return await apiRequest("/api/v1/user/influencer/mark-month-paid", "POST", {
+        influencerId,
+        monthYear,
+        payoutRef,
+    });
+};

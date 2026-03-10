@@ -20,13 +20,23 @@ export default function Login() {
     try {
 
       const data = await loginUser(email, password);
+      // Fallback clean if the backend still appends `.null` to the token
+      const rawToken = data.access_token || "";
+      const validToken = rawToken.endsWith(".null") ? rawToken.slice(0, -5) : rawToken;
 
-      localStorage.setItem("accessToken", data.access_token);
+      localStorage.setItem("accessToken", validToken);
 
       setMessage(data.message);
 
       setTimeout(() => {
-        navigate("/influencer-dashboard");
+        // Assume backend will be updated to return either data.role or data.user.role
+        const role = data.role || data.user?.role || "influencer"; // fallback to influencer if missing
+
+        if (role === "admin") {
+          navigate("/admin-dashboard");
+        } else {
+          navigate("/influencer-dashboard");
+        }
       }, 1500);
 
     } catch (error) {
