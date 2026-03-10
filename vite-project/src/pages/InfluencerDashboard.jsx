@@ -87,7 +87,7 @@ export default function InfluencerDashboard() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <StatCard 
             title="Total Referrals" 
             value={summary?.totalReferredUsers || 0} 
@@ -99,12 +99,6 @@ export default function InfluencerDashboard() {
             value={summary?.activeSubscribers || 0} 
             icon={<Activity className="w-6 h-6 text-emerald-500" />} 
             bg="bg-emerald-50"
-          />
-          <StatCard 
-            title="Total Revenue" 
-            value={`$${summary?.totalRevenueGenerated || 0}`} 
-            icon={<DollarSign className="w-6 h-6 text-amber-500" />} 
-            bg="bg-amber-50"
           />
           <StatCard 
             title="Total Commission" 
